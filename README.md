@@ -3,6 +3,11 @@ Pocket C++
 
 <a href="http://flattr.com/thing/1397406/Pocket-C" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 
+**Download**
+
+* [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
+* [Download Pocket C++ 0.4 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x64.exe)
+
 Portable and easy to use editor to write and test C++11 snippets ([supported features](http://gcc.gnu.org/gcc-4.8/cxx0x_status.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 4.8.1). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
 
 See [FAQ](https://github.com/dacap/pocketcpp/wiki/FAQ) for installation instructions and more.
