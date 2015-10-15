@@ -7,15 +7,16 @@ Pocket C++
 
 * [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
 * [Download Pocket C++ 0.4 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x64.exe)
+* [Download Pocket C++ 0.5 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.5/pocketcpp-0.5.exe)
 
-Portable and easy to use editor to write and test C++11 snippets ([supported features](http://gcc.gnu.org/gcc-4.8/cxx0x_status.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 4.8.1). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
+Portable and easy to use editor to write and test C++14 snippets ([supported features](https://gcc.gnu.org/projects/cxx1y.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 5.2.0). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
 
 See [FAQ](https://github.com/dacap/pocketcpp/wiki/FAQ) for installation instructions and more.
 
 Important notes:
 
   * The .cpp file must be self-contained (it must contain a main() function),
-  * The file is compiled using C++11 standard.
+  * The file is compiled using C++14 standard.
   * Static linking (-static) is used to generate the output (.exe file), in this way it doesn't depend on external .dll (e.g. C++ runtime).
   * In next versions you'll be able to link multiple .cpp files and to use third party libraries like Boost and SDL (which are already included in the Pocket C++ distribution)
   * Warning `<regex>`: g++ doesn't have full support of std::regex yet.
