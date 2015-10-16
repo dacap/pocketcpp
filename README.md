@@ -18,8 +18,7 @@ Important notes:
   * The .cpp file must be self-contained (it must contain a main() function),
   * The file is compiled using C++14 standard.
   * Static linking (-static) is used to generate the output (.exe file), in this way it doesn't depend on external .dll (e.g. C++ runtime).
-  * In next versions you'll be able to link multiple .cpp files and to use third party libraries like Boost and SDL (which are already included in the Pocket C++ distribution)
-  * Warning `<regex>`: g++ doesn't have full support of std::regex yet.
+  * In next versions you'll be able to link multiple .cpp files and to use third party libraries like Boost and SDL (which are already included in the Pocket C++ distribution).
 
 Pocket C++ looks like (is) Notepad++
 
