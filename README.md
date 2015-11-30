@@ -1,8 +1,6 @@
 Pocket C++
 ==========
 
-<a href="http://flattr.com/thing/1397406/Pocket-C" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
-
 **Download**
 
 * [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
