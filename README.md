@@ -3,11 +3,11 @@ Pocket C++
 
 **Download**
 
-* [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
+* [Download Pocket C++ 0.6 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.6/pocketcpp-0.6.exe)
 * [Download Pocket C++ 0.4 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x64.exe)
-* [Download Pocket C++ 0.5 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.5/pocketcpp-0.5.exe)
+* [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
 
-Portable and easy to use editor to write and test C++14 snippets ([supported features](https://gcc.gnu.org/projects/cxx1y.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 5.2.0). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
+Portable and easy to use editor to write and test C++14 snippets ([supported features](https://gcc.gnu.org/projects/cxx-status.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 6.1.0). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
 
 See [FAQ](https://github.com/dacap/pocketcpp/wiki/FAQ) for installation instructions and more.
 
