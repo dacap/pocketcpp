@@ -33,7 +33,7 @@ cd $outputdir/pocketcpp
 # ----------------------------------------
 
 wget --no-check-certificate https://notepad-plus-plus.org/repository/6.x/6.8.3/npp.6.8.3.bin.minimalist.7z -O npp.7z
-wget http://nuwen.net/files/mingw/history/mingw-13.3.exe -O mingw.exe
+wget --no-check-certificate https://nuwen.net/files/mingw/mingw-14.0-without-git.exe -O mingw.exe
 wget http://sourceforge.net/projects/npp-plugins/files/NppExec/NppExec%20Plugin%20v0.5.3/NppExec_update_0531.zip/download -O NppExec.zip
 
 # ----------------------------------------
