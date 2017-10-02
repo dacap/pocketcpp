@@ -3,20 +3,30 @@ Pocket C++
 
 **Download**
 
-* [Download Pocket C++ 0.6 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.6/pocketcpp-0.6.exe)
-* [Download Pocket C++ 0.4 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x64.exe)
+* [Download Pocket C++ 0.7 x64 (for 64 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.7/pocketcpp-0.7.exe)
 * [Download Pocket C++ 0.4 x86 (for 32 bits)](https://github.com/dacap/pocketcpp/releases/download/v0.4/pocketcpp-0.4-x86.exe)
 
-Portable and easy to use editor to write and test C++14 snippets ([supported features](https://gcc.gnu.org/projects/cxx-status.html)). It integrates [Notepad++](http://notepad-plus-plus.org/) and [Stephan T. Lavavej](http://nuwen.net/stl.html)'s [MinGW Distro](http://nuwen.net/mingw.html) (GCC 6.1.0). You can use F9 key to compile C++ files, and Ctrl+F9 to execute the compiled program.
+Portable and easy to use editor to write and test C++14 snippets
+([supported features](https://gcc.gnu.org/projects/cxx-status.html)). It
+integrates [Notepad++](http://notepad-plus-plus.org/) and
+[Stephan T. Lavavej](http://nuwen.net/stl.html)'s
+[MinGW Distro](http://nuwen.net/mingw.html) (GCC 7.2.0). You can use
+F9 key to compile C++ files, and Ctrl+F9 to execute the compiled
+program.
 
-See [FAQ](https://github.com/dacap/pocketcpp/wiki/FAQ) for installation instructions and more.
+See [FAQ](https://github.com/dacap/pocketcpp/wiki/FAQ) for
+installation instructions and more.
 
 Important notes:
 
-  * The .cpp file must be self-contained (it must contain a main() function),
+  * The .cpp file must be self-contained (it must contain a `main()` function),
   * The file is compiled using C++14 standard.
-  * Static linking (-static) is used to generate the output (.exe file), in this way it doesn't depend on external .dll (e.g. C++ runtime).
-  * In next versions you'll be able to link multiple .cpp files and to use third party libraries like Boost and SDL (which are already included in the Pocket C++ distribution).
+  * Static linking (`-static`) is used to generate the output (.exe
+    file), in this way it doesn't depend on external .dll (e.g. C++
+    runtime).
+  * In next versions you'll be able to link multiple .cpp files and to
+    use third party libraries like Boost and SDL (which are already
+    included in the Pocket C++ distribution).
 
 Pocket C++ looks like (is) Notepad++
 
