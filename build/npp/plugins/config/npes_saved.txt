@@ -1,5 +1,5 @@
 ::Compile C++ File
 NPP_SAVE
-g++ -o "$(CURRENT_DIRECTORY)\$(NAME_PART)" "$(FULL_CURRENT_PATH)" -static -std=c++14
+g++ -s -O3 -o "$(CURRENT_DIRECTORY)\$(NAME_PART)" "$(FULL_CURRENT_PATH)" -static -std=c++2a
 ::Execute Compiled File
-"$(CURRENT_DIRECTORY)\$(NAME_PART)"
+"$(CURRENT_DIRECTORY)\$(NAME_PART).exe"

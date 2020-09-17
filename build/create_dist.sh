@@ -1,7 +1,7 @@
 #! /bin/sh
 
 srcdir=$(pwd)
-version=0.7
+version=0.8
 outputdir="C:/pocketcpp-build"
 
 # ----------------------------------------
@@ -19,7 +19,7 @@ if [[ -d "$outputdir" ]] ; then
     echo -n "Do you want to continue anyway (yes/NO)? "
     read ans
     if [[ "$ans" != "yes" ]] ; then
-	exit 1 ;
+        exit 1 ;
     fi
 fi
 
@@ -32,9 +32,9 @@ cd $outputdir/pocketcpp
 # Download files
 # ----------------------------------------
 
-wget --no-check-certificate https://notepad-plus-plus.org/repository/6.x/6.8.3/npp.6.8.3.bin.minimalist.7z -O npp.7z
-wget --no-check-certificate https://nuwen.net/files/mingw/mingw-15.1-without-git.exe -O mingw.exe
-wget http://sourceforge.net/projects/npp-plugins/files/NppExec/NppExec%20Plugin%20v0.5.3/NppExec_update_0531.zip/download -O NppExec.zip
+wget https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.9/npp.7.8.9.bin.minimalist.x64.7z -O npp.7z
+wget https://nuwen.net/files/mingw/history/mingw-17.1.exe -O mingw.exe
+wget https://github.com/d0vgan/nppexec/releases/download/v06-RC3/NppExec_06RC3_dll_x64_PA.zip -O NppExec.zip
 
 # ----------------------------------------
 # Uncompress
@@ -59,9 +59,11 @@ cp -r $srcdir/QuickStart QuickStart
 # Install notepad++ plugins
 # ----------------------------------------
 
-unzip NppExec.zip dll_Unicode/NppExec.dll
-mv dll_Unicode/NppExec.dll npp/plugins
-rmdir dll_Unicode
+if [[ ! -f npp/plugins/NppExec/NppExec.dll ]] ; then
+    unzip NppExec.zip NppExec/NppExec.dll
+    mkdir -q npp/plugins
+    mv NppExec npp/plugins
+fi
 
 # ----------------------------------------
 # Remove downloaded files
