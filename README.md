@@ -9,6 +9,7 @@ Portable and easy to use editor to write and test C++11/14/17/20 snippets.
 * Press `F4`/`Ctrl+F4` to go to next/previous compiler error
 * Includes [MinGW Distro](http://nuwen.net/mingw.html) by [Stephan T. Lavavej](http://nuwen.net/stl.html), gcc 9.2.0 ([supported features](https://gcc.gnu.org/projects/cxx-status.html))
 * Includes [Notepad++ v7.8.9](http://notepad-plus-plus.org/) with [NppExec](https://github.com/d0vgan/nppexec) plugin
+* Includes [cmake v3.18.2](http://cmake.org/) with [NppExec](https://github.com/d0vgan/nppexec) plugin
 
 ## Download
 

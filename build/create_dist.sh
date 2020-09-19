@@ -2,7 +2,7 @@
 
 srcdir=$(pwd)
 version=0.8
-outputdir="C:/pocketcpp-build"
+outputdir="/c/pocketcpp-build"
 
 # ----------------------------------------
 # Output directory
@@ -23,57 +23,67 @@ if [[ -d "$outputdir" ]] ; then
     fi
 fi
 
-mkdir $outputdir
-mkdir $outputdir/pocketcpp
-start $outputdir/pocketcpp
-cd $outputdir/pocketcpp
+if [[ ! -d "$outputdir" ]] ; then mkdir "$outputdir" ; fi
+if [[ ! -d "$outputdir/cache" ]] ; then mkdir "$outputdir/cache" ; fi
+if [[ ! -d "$outputdir/pocketcpp" ]] ; then mkdir "$outputdir/pocketcpp" ; fi
+start "$outputdir"
 
 # ----------------------------------------
 # Download files
 # ----------------------------------------
 
-wget https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.9/npp.7.8.9.bin.minimalist.x64.7z -O npp.7z
-wget https://nuwen.net/files/mingw/history/mingw-17.1.exe -O mingw.exe
-wget https://github.com/d0vgan/nppexec/releases/download/v06-RC3/NppExec_06RC3_dll_x64_PA.zip -O NppExec.zip
+cd "$outputdir/cache"
+if [[ ! -f npp.7z ]] ; then
+    wget https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.9/npp.7.8.9.bin.minimalist.x64.7z -O npp.7z
+fi
+if [[ ! -f mingw.exe ]] ; then
+    wget https://nuwen.net/files/mingw/history/mingw-17.1.exe -O mingw.exe
+fi
+if [[ ! -f NppExec.zip ]] ; then
+    wget https://github.com/d0vgan/nppexec/releases/download/v06-RC3/NppExec_06RC3_dll_x64_PA.zip -O NppExec.zip
+fi
+if [[ ! -f cmake.zip ]] ; then
+    wget https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2-win64-x64.zip -O cmake.zip
+fi
 
 # ----------------------------------------
 # Uncompress
 # ----------------------------------------
 
+cd "$outputdir/pocketcpp"
 if [[ ! -d npp ]] ; then
-    7z x npp.7z -onpp
+    7z x "$outputdir/cache/npp.7z" -onpp
 fi
 if [[ ! -d MinGW ]] ; then
-    7z x mingw.exe
+    7z x "$outputdir/cache/mingw.exe"
+fi
+if [[ ! -d cmake ]] ; then
+    unzip "$outputdir/cache/cmake.zip"
+    mv cmake-3.18.2-win64-x64 cmake
 fi
 
 # ----------------------------------------
-# Copy pocket++ files
+# Copy Pocket++ files
 # ----------------------------------------
 
+cd "$outputdir/pocketcpp"
 cp $srcdir/launchers/*.bat .
 cp -r $srcdir/npp .
 cp -r $srcdir/QuickStart QuickStart
 
 # ----------------------------------------
-# Install notepad++ plugins
+# Install Notepad++ plugins
 # ----------------------------------------
 
 if [[ ! -f npp/plugins/NppExec/NppExec.dll ]] ; then
-    unzip NppExec.zip NppExec/NppExec.dll
+    unzip "$outputdir/cache/NppExec.zip" NppExec/NppExec.dll
     mkdir -q npp/plugins
     mv NppExec npp/plugins
 fi
 
 # ----------------------------------------
-# Remove downloaded files
-# ----------------------------------------
-
-rm npp.7z mingw.exe NppExec.zip
-
-# ----------------------------------------
 # Create package
 # ----------------------------------------
 
-cd ..
+cd "$outputdir"
 7z a -sfx7z.sfx pocketcpp-$version.exe pocketcpp
