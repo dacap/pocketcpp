@@ -1,25 +1,35 @@
 #! /bin/sh
 
 srcdir=$(pwd)
-version=0.8
-outputdir="/c/pocketcpp-build"
+
+if [[ "$POCKET_VERSION" != "" ]] ; then
+    version=$POCKET_VERSION
+else
+    version=dev
+fi
 
 # ----------------------------------------
 # Output directory
 # ----------------------------------------
 
-echo -n "Output directory ($outputdir)? "
-read ans
-if [[ "$ans" != "" ]] ; then
-    outputdir=$ans
-fi
+if [[ "$POCKETCPP_OUTDIR" != "" ]] ; then
+    outputdir="$POCKETCPP_OUTDIR"
+else
+    outputdir="/c/pocketcpp-build"
 
-if [[ -d "$outputdir" ]] ; then
-    echo Directory $outputdir already exist
-    echo -n "Do you want to continue anyway (yes/NO)? "
+    echo -n "Output directory ($outputdir)? "
     read ans
-    if [[ "$ans" != "yes" ]] ; then
-        exit 1 ;
+    if [[ "$ans" != "" ]] ; then
+        outputdir=$ans
+    fi
+
+    if [[ -d "$outputdir" ]] ; then
+        echo Directory $outputdir already exist
+        echo -n "Do you want to continue anyway (yes/NO)? "
+        read ans
+        if [[ "$ans" != "yes" ]] ; then
+            exit 1 ;
+        fi
     fi
 fi
 
@@ -77,7 +87,7 @@ cp -r $srcdir/QuickStart QuickStart
 
 if [[ ! -f npp/plugins/NppExec/NppExec.dll ]] ; then
     unzip "$outputdir/cache/NppExec.zip" NppExec/NppExec.dll
-    mkdir -q npp/plugins
+    mkdir npp/plugins
     mv NppExec npp/plugins
 fi
 

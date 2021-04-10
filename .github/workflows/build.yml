@@ -1,0 +1,25 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Installing Dependencies
+      shell: bash
+      run: |
+        choco install wget --no-progress
+    - name: Packaging Files
+      shell: bash
+      run: |
+        export POCKET_VERSION=0.8
+        export POCKETCPP_OUTDIR=$(pwd)
+        cd build && bash create_dist.sh
+    - name: Uploading Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: pocketcpp-0.8.exe
+        path: pocketcpp-0.8.exe
